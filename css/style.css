@@ -1,1 +1,7 @@
-STKNOHOTELS2:AT9RM5G
+
+
+body {
+    background-image: url(../images/footballpitch-birdview.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
