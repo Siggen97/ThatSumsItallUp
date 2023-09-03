@@ -1,7 +1,47 @@
-
-
 body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: antiquewhite;
+}
+a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+a:hover {
+    text-decoration: underline;
+}
+#account-btn {
+    background-color: black;
+    border: 2px solid antiquewhite;
+    color: antiquewhite;
+    padding: 8px;
+    height: 2rem;
+}
+body::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Sit behind the content */
+
     background-image: url(../images/footballpitch-birdview.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+
+    /* Blur the background image */
+    filter: blur(4px);
+    transform: scale(1.02); /* to cover any gaps at the edges */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+nav button {
+    background: transparent;
+    border: none;
 }
