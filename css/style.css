@@ -11,13 +11,15 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
 }
 #account-btn {
     background-color: black;
     border: 2px solid antiquewhite;
     color: antiquewhite;
-    padding: 8px;
-    height: 2rem;
+    padding: 0.7rem;
+    
 }
 body::before {
     content: "";
@@ -27,21 +29,25 @@ body::before {
     bottom: 0;
     left: 0;
     z-index: -1; /* Sit behind the content */
-
+    
     background-image: url(../images/footballpitch-birdview.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-
+    
     /* Blur the background image */
     filter: blur(4px);
     transform: scale(1.02); /* to cover any gaps at the edges */
 }
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
+    margin: 1%;
 }
 nav button {
+    font-size: 1rem;
     background: transparent;
     border: none;
+    padding: 1rem;
 }
