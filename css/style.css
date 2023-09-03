@@ -13,7 +13,7 @@ a {
     text-decoration: none;
     color: antiquewhite;
 }
-a:hover {
+nav a:hover {
     text-decoration: underline;
     font-size: 1.2rem;
     transition: 0.3s ease-in-out;
@@ -23,7 +23,7 @@ a:hover {
     border: 2px solid antiquewhite;
     color: antiquewhite;
     padding: 0.7rem;
-    
+    cursor: pointer;
 }
 body::before {
     content: "";
@@ -42,7 +42,7 @@ body::before {
     filter: blur(4px);
     transform: scale(1.02); /* to cover any gaps at the edges */
 }
-header {
+header, main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
