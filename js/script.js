@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPosts() {
-	fetch('https://www.thatsumsitallup.site/wp-json/wp/v2/posts')
+	fetch(
+		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc'
+	)
 		.then((response) => response.json())
 		.then((posts) => {
 			// Fetch the media for each post
