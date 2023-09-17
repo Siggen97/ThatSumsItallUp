@@ -28,8 +28,36 @@
     <main>
         <section>
             <h2>About</h2>
-            <div></div>
+            <div>
+                <p>
+                    That Sums It All Up is a dedicated football blog sharing insights, analyses, and opinions
+                    about the beautiful game. From the biggest matches on the world stage to local leagues,
+                    we cover stories that matter to fans. Join our community and be part of the conversation.
+                </p>
+            </div>
+    
             <h2>Contact</h2>
+            <div>
+                <p>If you have any queries, suggestions or feedback, please feel free to get in touch via the form below:
+                </p>
+                <form action="YOUR_SERVER_ENDPOINT" method="POST">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
