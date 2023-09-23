@@ -2,7 +2,6 @@
 
 const authors = {
 	1: 'Sigrid Lydvo',
-	// Add more authors as needed
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,9 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPosts() {
-	fetch(
-		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc'
-	)
+	const isHomePage = window.location.pathname.includes('index.html');
+	let apiUrl =
+		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc';
+
+	if (isHomePage) {
+		apiUrl += '&per_page=4'; // Only fetch the last 4 posts for homepage
+	}
+
+	fetch(apiUrl)
 		.then((response) => response.json())
 		.then((posts) => {
 			// Fetch the media for each post
@@ -23,13 +28,12 @@ function fetchPosts() {
 					.then((response) => response.json())
 					.then((media) => {
 						post.mediaUrl = media.source_url; // Add the media URL to the post object
-						displayPost(post); // Display the post once we have its media
+						displayPost(post); 
 					});
 			});
 		})
 		.catch((error) => console.error('Error fetching posts:', error));
 }
-
 
 function displayPost(post) {
 	const postsContainer = document.querySelector('main > section > div');
@@ -37,7 +41,6 @@ function displayPost(post) {
 	const postElement = document.createElement('div');
 	postElement.className = 'post-summary';
 
-	// Create the anchor tag for the post link
 	const postLink = `post.html?id=${post.id}`;
 
 	postElement.innerHTML = `
@@ -57,4 +60,3 @@ function displayPost(post) {
 
 	postsContainer.appendChild(postElement);
 }
-
