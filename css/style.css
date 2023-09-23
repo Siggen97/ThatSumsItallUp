@@ -112,6 +112,12 @@ nav button {
     padding: 10px;
     border-radius: 10px;
 }
+#single-post-content .featured-media {
+    width: 50%;
+}
+#single-post-content .featured-media:hover {
+    opacity: 1;
+}
 .post-content {
     padding: 2rem;
 }
