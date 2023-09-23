@@ -16,7 +16,7 @@ a {
 nav a:hover {
     text-decoration: underline;
     font-size: 1.2rem;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s all ease-in-out;
 }
 #account-btn {
     background-color: black;
@@ -79,6 +79,7 @@ nav button {
 }
 .post-summary a:hover {
     color: antiquewhite;
+    transition: 0.3s all ease-in-out;
 }
 .featured-media {
     width: 18rem;
@@ -86,9 +87,11 @@ nav button {
     border-radius: 10px;
     padding: 2px;
 }
-.featured-media:hover{
-    transform: scale(1.1);
+.featured-media:hover {
+    transform: scale(1.05);
+    transition: 0.2s all ease-in-out;
 }
+
 
 #single-post-content {
     margin: auto;
