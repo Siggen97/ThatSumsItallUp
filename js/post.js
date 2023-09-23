@@ -78,9 +78,9 @@ function displaySinglePost(post) {
                 <input type="text" id="comment-author" name="author" required>
                 
                 <label for="comment-content">Comment:</label>
-                <textarea id="comment-content" name="content" rows="4" required></textarea>
+                <textarea class="comment-content" name="content" rows="6" required></textarea>
                 
-                <button type="submit">Submit Comment</button>
+                <button class="submit-comment" type="submit">Submit Comment</button>
             </form>
         </div>
     `;
