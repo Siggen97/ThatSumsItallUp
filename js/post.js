@@ -60,15 +60,15 @@ function fetchAuthor(authorId) {
 
 function displaySinglePost(post) {
 	postContainer.innerHTML = `
-        <h1>${post.title.rendered}</h1>
-        <p>Date Modified: ${new Date(post.modified).toLocaleDateString()}</p>
-        <div>${post.content.rendered}</div>
+        <h1 class="post-content">${post.title.rendered}</h1>
+		<p>Date Published: ${new Date(post.date).toLocaleDateString()}</p>
+        <div class="post-content">${post.content.rendered}</div>
         ${
-					post.mediaUrl
-						? `<img src="${post.mediaUrl}" alt="${post.title.rendered}" class="featured-media">`
-						: ''
-				}
-        <p>Date Published: ${new Date(post.date).toLocaleDateString()}</p>
+			post.mediaUrl
+			? `<img src="${post.mediaUrl}" alt="${post.title.rendered}" class="featured-media">`
+			: ''
+		}
+		<p>Date Modified: ${new Date(post.modified).toLocaleDateString()}</p>
         <p>Author: ${post.authorName}</p>
         
         <div class="comment-section">

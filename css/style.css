@@ -68,15 +68,6 @@ nav button {
     padding: 10px;
     border-radius: 10px;
 }
-#single-post-content {
-    margin: auto;
-    width: 50rem;
-    margin-top: 5rem;
-    color: black;
-    background-color: rgba(250, 235, 215, 0.646);
-    padding: 10px;
-    border-radius: 10px;
-}
 .post-summary a{
     color: black;
     font-weight: bold;
@@ -97,6 +88,19 @@ nav button {
 }
 .featured-media:hover{
     transform: scale(1.1);
+}
+
+#single-post-content {
+    margin: auto;
+    width: 50rem;
+    margin-top: 5rem;
+    color: black;
+    background-color: rgba(250, 235, 215, 0.646);
+    padding: 10px;
+    border-radius: 10px;
+}
+.post-content {
+    padding: 2rem;
 }
 
 /* Comment-Field */
