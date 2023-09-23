@@ -64,11 +64,63 @@ function displaySinglePost(post) {
         <p>Date Modified: ${new Date(post.modified).toLocaleDateString()}</p>
         <div>${post.content.rendered}</div>
         ${
-            post.mediaUrl
-            ? `<img src="${post.mediaUrl}" alt="${post.title.rendered}" class="featured-media">`
-            : ''
-        }
+					post.mediaUrl
+						? `<img src="${post.mediaUrl}" alt="${post.title.rendered}" class="featured-media">`
+						: ''
+				}
         <p>Date Published: ${new Date(post.date).toLocaleDateString()}</p>
         <p>Author: ${post.authorName}</p>
+        
+        <div class="comment-section">
+            <h2>Leave a Comment</h2>
+            <form id="comment-form">
+                <label for="comment-author">Name:</label>
+                <input type="text" id="comment-author" name="author" required>
+                
+                <label for="comment-content">Comment:</label>
+                <textarea id="comment-content" name="content" rows="4" required></textarea>
+                
+                <button type="submit">Submit Comment</button>
+            </form>
+        </div>
     `;
+
+	// Add event listener to the form
+	document
+		.getElementById('comment-form')
+		.addEventListener('submit', handleCommentSubmission);
+}
+function handleCommentSubmission(event) {
+	event.preventDefault();
+
+	const authorName = document.getElementById('comment-author').value;
+	const content = document.getElementById('comment-content').value;
+
+	const commentData = {
+		post: postId, // relates the comment to the post
+		author_name: authorName,
+		content: content,
+	};
+
+	fetch('https://www.thatsumsitallup.site/wp-json/wp/v2/comments', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(commentData),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			if (data.id) {
+				alert('Your comment has been submitted and is awaiting moderation.');
+				// Clear the form fields after successful submission
+				document.getElementById('comment-author').value = '';
+				document.getElementById('comment-content').value = '';
+			} else {
+				alert('There was an error submitting your comment.');
+			}
+		})
+		.catch((error) => {
+			console.error('Error submitting comment:', error);
+		});
 }

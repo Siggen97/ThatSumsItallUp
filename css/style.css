@@ -99,6 +99,37 @@ nav button {
     transform: scale(1.1);
 }
 
+/* Comment-Field */
+
+.comment-section {
+    padding: 20px;
+    border: 2px solid #ddd; 
+    border-radius: 8px;  
+    margin-top: 5rem; 
+}
+
+.comment-section h2 {
+    margin-top: 0;  
+}
+
+.comment-section form {
+    margin-top: 2rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.5em;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;  
+}
+.comment-section form input {
+    border: 1px solid #282828;
+    border-radius: 5px;  
+
+}
+
+
+
 /* Footer */
 footer {
     background-color: #222;
