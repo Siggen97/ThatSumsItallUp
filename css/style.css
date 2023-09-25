@@ -79,7 +79,6 @@ nav button {
 .all-posts {
     display: grid;
     justify-content: center;
-    align-items: center;
     justify-content: space-evenly;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, 1fr);
