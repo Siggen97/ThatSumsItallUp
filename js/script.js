@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPosts() {
-	const isHomePage = window.location.pathname.includes('index.html');
 	let apiUrl =
 		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc';
 
-	if (isHomePage) {
-		apiUrl += '&per_page=4'; // Only fetch the last 4 posts for homepage
+	if (window.location.pathname.includes('index.html')) {
+		apiUrl += '&per_page=3'; // Only fetch the last 4 posts for homepage
+	} else if (window.location.pathname.includes('archieve.html')) {
+		apiUrl += '&per_page=12'; // Fetch 12 posts for the archive page
 	}
 
 	fetch(apiUrl)
@@ -28,7 +29,7 @@ function fetchPosts() {
 					.then((response) => response.json())
 					.then((media) => {
 						post.mediaUrl = media.source_url; // Add the media URL to the post object
-						displayPost(post); 
+						displayPost(post);
 					});
 			});
 		})
@@ -36,7 +37,15 @@ function fetchPosts() {
 }
 
 function displayPost(post) {
-	const postsContainer = document.querySelector('main > section > div');
+	let postsContainer; 
+
+	if (window.location.pathname.includes('index.html')) {
+		postsContainer = document.querySelector('.latest-posts');
+	} else if (window.location.pathname.includes('archieve.html')) {
+		postsContainer = document.querySelector('.all-posts');
+	}
+
+
 
 	const postElement = document.createElement('div');
 	postElement.className = 'post-summary';
