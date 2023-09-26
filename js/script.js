@@ -1,40 +1,55 @@
 /** @format */
 
 const authors = {
-	1: 'Sigrid Lydvo',
+    1: 'Sigrid Lydvo',
 };
 
+
+let offset = 0; 
+const postsPerPage = 8;
+
 document.addEventListener('DOMContentLoaded', () => {
-	fetchPosts();
+    fetchPosts(postsPerPage); // Fetch 8 posts
+
+    // "load more" button functionality
+    if (window.location.pathname.includes('archieve.html')) {
+        const loadMoreBtn = document.createElement('button');
+		loadMoreBtn.addClassName
+        loadMoreBtn.innerText = 'Load More';
+        loadMoreBtn.addEventListener('click', () => {
+					offset += postsPerPage;
+					fetchPosts(4); // load 4 more
+				});
+
+        // "load more" button 
+        document
+					.querySelector('.main-archive .loadmore')
+					.appendChild(loadMoreBtn);
+    }
 });
+function fetchPosts(perPage) {
+    let apiUrl = `https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc&per_page=${perPage}&offset=${offset}`;
 
-function fetchPosts() {
-	let apiUrl =
-		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc';
+    // If homepage, only fetch the last 3 posts
+    if (window.location.pathname.includes('index.html')) {
+        apiUrl += '&per_page=3';
+    }
 
-	if (window.location.pathname.includes('index.html')) {
-		apiUrl += '&per_page=3'; // Only fetch the last 3 posts
-	} else if (window.location.pathname.includes('archieve.html')) {
-		apiUrl += '&per_page=12'; // Fetch 12 posts for the archive page
-	}
-
-	fetch(apiUrl)
-		.then((response) => response.json())
-		.then((posts) => {
-			// Fetch the media for each post
-			posts.forEach((post) => {
-				fetch(
-					`https://www.thatsumsitallup.site/wp-json/wp/v2/media/${post.featured_media}`
-				)
-					.then((response) => response.json())
-					.then((media) => {
-						post.mediaUrl = media.source_url; // Add the media URL to the post object
-						displayPost(post);
-					});
-			});
-		})
-		.catch((error) => console.error('Error fetching posts:', error));
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((posts) => {
+            posts.forEach((post) => {
+                fetch(`https://www.thatsumsitallup.site/wp-json/wp/v2/media/${post.featured_media}`)
+                    .then((response) => response.json())
+                    .then((media) => {
+                        post.mediaUrl = media.source_url; 
+                        displayPost(post);
+                    });
+            });
+        })
+        .catch((error) => console.error('Error fetching posts:', error));
 }
+
 
 function displayPost(post) {
 	let postsContainer; 

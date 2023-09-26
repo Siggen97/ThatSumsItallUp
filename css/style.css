@@ -61,25 +61,26 @@ header {
 	align-items: center;
 	margin: 1%;
 }
-.main-archive section {
-    display: flex;
-    justify-content: center;
-}
 nav button {
-    font-size: 1.2rem;
+	font-size: 1.2rem;
 	background: transparent;
 	border: none;
 	padding: 1rem;
 }
 .latest-posts {
-    display: flex;
+	display: flex;
 	align-items: baseline;
+	gap: 2rem;
+}
+.main-archive {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	gap: 2rem;
 }
 .all-posts {
     display: grid;
     justify-content: center;
-    justify-content: space-evenly;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, 1fr);
 	grid-row-gap: 1rem;
@@ -97,15 +98,27 @@ nav button {
 .div4 {
 	grid-area: 4 / 1 / 5 / 4;
 }
-
+.loadmore {
+	display: flex;
+	justify-content: end;
+	
+}
+.main-archive .loadmore button {
+	background-color: #222;
+	color: #ddd;
+	padding: 10px 16px;
+	border-radius: 3px;
+	border: none;
+	cursor: pointer;
+}
 .post-summary {
-	width: 300px;
+	width: 350px;
 	height: fit-content;
 	aspect-ratio: 0.55;
 	color: black;
-	background-color: rgba(250, 235, 215, 0.559);
+	background-color: rgba(255, 255, 255, 0.559);
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 3px;
 	text-align: center;
 }
 .post-summary a {
