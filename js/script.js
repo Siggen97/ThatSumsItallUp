@@ -13,7 +13,7 @@ function fetchPosts() {
 		'https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc';
 
 	if (window.location.pathname.includes('index.html')) {
-		apiUrl += '&per_page=3'; // Only fetch the last 4 posts for homepage
+		apiUrl += '&per_page=3'; // Only fetch the last 3 posts
 	} else if (window.location.pathname.includes('archieve.html')) {
 		apiUrl += '&per_page=12'; // Fetch 12 posts for the archive page
 	}
