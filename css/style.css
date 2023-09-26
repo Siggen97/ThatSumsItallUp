@@ -46,11 +46,14 @@ nav button {
 a {
 	text-decoration: none;
 	color: antiquewhite;
+	border: 2px solid transparent;
+	padding: 10px;
 }
 nav a:hover {
-	text-decoration: underline;
-	transition: 0.3s ease-in;
-	text-shadow: 1px 1px 1px #c3c3c3;
+	border: 2px solid antiquewhite;
+	border-radius: 3px;
+	padding: 12px;
+	transition: 0.3s all ease-in-out;
 }
 #account-btn {
     position: absolute;
@@ -151,7 +154,7 @@ nav a:hover {
 	transition: 0.2s all ease-in-out;
 }
 .post-summary a:hover {
-	text-shadow: 1px 1px 1px #3c3c3c;
+	text-shadow: 1px 1px 6px #686868;
 	transition: 0.2s all ease-in-out;
 }
 
