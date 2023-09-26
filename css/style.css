@@ -4,7 +4,7 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	font-family: 'Times New Roman', Times, serif;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	color: antiquewhite;
 	caret-color: transparent;
 }
@@ -27,7 +27,7 @@ nav a:hover {
 	border: 2px solid antiquewhite;
 	color: antiquewhite;
 	padding: 0.7rem;
-    border-radius: 10px;
+    border-radius: 3px;
 	cursor: pointer;
 }
 body::before {
