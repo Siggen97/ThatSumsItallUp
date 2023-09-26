@@ -36,9 +36,9 @@
         <button id="account-btn">Sign Up/ Log In</button>
     </header>
     <main>
-        <section>
-            <h2>About</h2>
-            <div>
+        <section class="about-contact">
+            <div class="about-content">
+                <h2>About</h2>
                 <p>
                     That Sums It All Up is a dedicated football blog sharing insights, analyses, and opinions
                     about the beautiful game. From the biggest matches on the world stage to local leagues,
@@ -46,8 +46,8 @@
                 </p>
             </div>
     
-            <h2>Contact</h2>
-            <div>
+            <div class="contact-content">
+                <h2>Contact</h2>
                 <p>If you have any queries, suggestions or feedback, please feel free to get in touch via the form below:
                 </p>
                 <form action="YOUR_SERVER_ENDPOINT" method="POST">
@@ -60,11 +60,11 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message"></label>
+                        <textarea id="message" name="message" rows="6" required>Message...</textarea>
                     </div>
                     <div>
-                        <button type="submit">Submit</button>
+                        <button class="submit-request" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

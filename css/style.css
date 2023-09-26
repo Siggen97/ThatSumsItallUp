@@ -4,7 +4,8 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1.1rem;
 	color: antiquewhite;
 	caret-color: transparent;
 }
@@ -28,7 +29,6 @@ body::before {
 	filter: blur(4px);
 	transform: scale(1.02); /* to cover any gaps at the edges */
 }
-
 
 header {
 	display: flex;
@@ -56,13 +56,13 @@ nav a:hover {
 	transition: 0.3s all ease-in-out;
 }
 #account-btn {
-    position: absolute;
-    right: 2em;
+	position: absolute;
+	right: 2em;
 	background-color: black;
 	border: 2px solid antiquewhite;
 	color: antiquewhite;
 	padding: 0.7rem;
-    border-radius: 3px;
+	border-radius: 3px;
 	cursor: pointer;
 }
 
@@ -88,8 +88,8 @@ nav a:hover {
 	gap: 2rem;
 }
 .all-posts {
-    display: grid;
-    justify-content: center;
+	display: grid;
+	justify-content: center;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, 1fr);
 	grid-row-gap: 1rem;
@@ -207,7 +207,7 @@ nav a:hover {
 .comment-content {
 	width: 20em;
 }
-.submit-comment {
+.submit-comment, .submit-request {
 	margin-top: 1rem;
 	background-color: #222;
 	color: #ddd;
@@ -215,6 +215,31 @@ nav a:hover {
 	padding: 10px 16px;
 	border: none;
 	cursor: pointer;
+}
+
+/* About/Contact Page */
+.about-contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.about-contact p {
+	width: 600px;
+}
+.about-content,
+.contact-content {
+	margin-top: 2rem;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.411);
+	padding: 10px 16px;
+	border-radius: 3px;
+}
+form div {
+	margin-top: 1rem;
+}
+#message {
+	width: 250px;
 }
 
 /* Footer */
