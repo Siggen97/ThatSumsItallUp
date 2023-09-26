@@ -11,6 +11,38 @@ body {
 body::-webkit-scrollbar {
 	display: none;
 }
+body::before {
+	content: '';
+	position: fixed; /* Fixed position */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1; /* Sit behind the content */
+
+	background-image: url(../images/footballpitch-birdview.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	/* Blur the background image */
+	filter: blur(4px);
+	transform: scale(1.02); /* to cover any gaps at the edges */
+}
+
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1%;
+}
+nav button {
+	font-size: 1.2rem;
+	background: transparent;
+	border: none;
+	padding: 1rem;
+}
 a {
 	text-decoration: none;
 	color: antiquewhite;
@@ -30,30 +62,8 @@ nav a:hover {
     border-radius: 3px;
 	cursor: pointer;
 }
-body::before {
-	content: '';
-	position: fixed; /* Fixed position */
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1; /* Sit behind the content */
 
-	background-image: url(../images/footballpitch-birdview.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	/* Blur the background image */
-	filter: blur(4px);
-	transform: scale(1.02); /* to cover any gaps at the edges */
-}
-header {
-    display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	margin: 1%;
-}
+/* Home Page */
 .main-home {
 	display: flex;
 	flex-direction: column;
@@ -61,17 +71,13 @@ header {
 	align-items: center;
 	margin: 1%;
 }
-nav button {
-	font-size: 1.2rem;
-	background: transparent;
-	border: none;
-	padding: 1rem;
-}
 .latest-posts {
 	display: flex;
 	align-items: baseline;
 	gap: 2rem;
 }
+
+/* Archive Page */
 .main-archive {
 	display: flex;
 	flex-direction: column;
@@ -101,7 +107,6 @@ nav button {
 .loadmore {
 	display: flex;
 	justify-content: end;
-	
 }
 .main-archive .loadmore button {
 	background-color: #222;
@@ -111,6 +116,8 @@ nav button {
 	border: none;
 	cursor: pointer;
 }
+
+/* Post Layout */
 .post-summary {
 	width: 350px;
 	height: fit-content;
@@ -131,7 +138,6 @@ nav button {
 	align-items: center;
 	opacity: 1;
 }
-
 .featured-media {
 	width: 100%;
 	max-height: 100%;
@@ -144,20 +150,20 @@ nav button {
 	opacity: 70%;
 	transition: 0.2s all ease-in-out;
 }
-
 .post-summary a:hover {
 	text-shadow: 1px 1px 1px #3c3c3c;
 	transition: 0.2s all ease-in-out;
 }
 
+/* Single Posts */
 #single-post-content {
 	margin: auto;
 	width: 50rem;
 	margin-top: 5rem;
 	color: black;
-	background-color: rgba(250, 235, 215, 0.646);
+	background-color: rgba(255, 255, 255, 0.559);
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 #single-post-content .featured-media {
 	width: 50%;
@@ -170,11 +176,10 @@ nav button {
 }
 
 /* Comment-Field */
-
 .comment-section {
 	padding: 20px;
 	border: 2px solid #ddd;
-	border-radius: 8px;
+	border-radius: 3px;
 	margin-top: 5rem;
 }
 
@@ -189,20 +194,24 @@ nav button {
 	align-items: baseline;
 	gap: 0.5em;
 	border: 2px solid #ddd;
-	padding: 10px;
-	border-radius: 8px;
+	padding: 15px;
+	border-radius: 3px;
 }
 .comment-section form input {
 	border: 1px solid #282828;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 .comment-content {
 	width: 20em;
 }
 .submit-comment {
-	padding: 8px;
-	background-color: rgba(255, 255, 255, 0.52);
-	border-radius: 5px;
+	margin-top: 1rem;
+	background-color: #222;
+	color: #ddd;
+	border-radius: 3px;
+	padding: 10px 16px;
+	border: none;
+	cursor: pointer;
 }
 
 /* Footer */
