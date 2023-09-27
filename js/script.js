@@ -1,53 +1,53 @@
 /** @format */
 
 const authors = {
-    1: 'Sigrid Lydvo',
+	1: 'Sigrid Lydvo',
 };
 
-
-let offset = 0; 
+let offset = 0;
 const postsPerPage = 8;
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchPosts(postsPerPage); // Fetch 8 posts
+	if (window.location.pathname.includes('index.html')) {
+		fetchPosts(3, 0); // Fetch 3 posts for homepage
+	} else if (window.location.pathname.includes('archieve.html')) {
+		fetchPosts(postsPerPage, offset);
 
-    // "load more" button functionality
-    if (window.location.pathname.includes('archieve.html')) {
-        const loadMoreBtn = document.createElement('button');
-		loadMoreBtn.addClassName
-        loadMoreBtn.innerText = 'Load More';
-        loadMoreBtn.addEventListener('click', () => {
-					offset += postsPerPage;
-					fetchPosts(4); // load 4 more
-				});
+		const loadMoreBtn = document.createElement('button');
+		loadMoreBtn.textContent = 'Load More';
+		loadMoreBtn.addEventListener('click', () => {
+			offset += postsPerPage;
+			fetchPosts(4, offset); // load 4 more for archive page
+		});
 
-        // "load more" button 
-        document
-					.querySelector('.main-archive .loadmore')
-					.appendChild(loadMoreBtn);
-    }
+		const loadMoreContainer = document.querySelector('.main-archive .loadmore');
+		if (loadMoreContainer) {
+			loadMoreContainer.appendChild(loadMoreBtn);
+		} else {
+			console.error('Load more container not found!');
+		}
+	}
 });
-function fetchPosts(perPage) {
-    let apiUrl = `https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc&per_page=${perPage}&offset=${offset}`;
 
-    // If homepage, only fetch the last 3 posts
-    if (window.location.pathname.includes('index.html')) {
-        apiUrl += '&per_page=3';
-    }
+function fetchPosts(perPage, offset) {
+	const apiUrl = `https://www.thatsumsitallup.site/wp-json/wp/v2/posts?orderby=date&order=desc&per_page=${perPage}&offset=${offset}`;
 
-    fetch(apiUrl)
-        .then((response) => response.json())
-        .then((posts) => {
-            posts.forEach((post) => {
-                fetch(`https://www.thatsumsitallup.site/wp-json/wp/v2/media/${post.featured_media}`)
-                    .then((response) => response.json())
-                    .then((media) => {
-                        post.mediaUrl = media.source_url; 
-                        displayPost(post);
-                    });
-            });
-        })
-        .catch((error) => console.error('Error fetching posts:', error));
+	// Fetching posts
+	fetch(apiUrl)
+		.then((response) => response.json())
+		.then((posts) => {
+			posts.forEach((post) => {
+				fetch(
+					`https://www.thatsumsitallup.site/wp-json/wp/v2/media/${post.featured_media}`
+				)
+					.then((response) => response.json())
+					.then((media) => {
+						post.mediaUrl = media.source_url;
+						displayPost(post);
+					});
+			});
+		})
+		.catch((error) => console.error('Error fetching posts:', error));
 }
 
 
