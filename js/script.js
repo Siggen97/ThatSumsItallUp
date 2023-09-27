@@ -52,7 +52,7 @@ function fetchPosts(perPage) {
 
 
 function displayPost(post) {
-	let postsContainer; 
+	let postsContainer;
 
 	if (window.location.pathname.includes('index.html')) {
 		postsContainer = document.querySelector('.latest-posts');
@@ -60,7 +60,10 @@ function displayPost(post) {
 		postsContainer = document.querySelector('.all-posts');
 	}
 
-
+	if (!postsContainer) {
+		console.error('Posts container not found!');
+		return;
+	}
 
 	const postElement = document.createElement('div');
 	postElement.className = 'post-summary';
