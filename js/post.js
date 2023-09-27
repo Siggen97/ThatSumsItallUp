@@ -117,7 +117,14 @@ function handleCommentSubmission(event) {
 		},
 		body: JSON.stringify(commentData),
 	})
-		.then((response) => response.json())
+		.then((response) => {
+			if (!response.ok) {
+				return response.json().then((err) => {
+					throw err;
+				});
+			}
+			return response.json();
+		})
 		.then((data) => {
 			if (data.id) {
 				alert('Comment submitted for moderation.');
