@@ -85,7 +85,8 @@ function displaySinglePost(post) {
         </div>
     `;
 
-	// Add event listener to the form
+
+	// Add event listener
 	document
 		.getElementById('comment-form')
 		.addEventListener('submit', handleCommentSubmission);
@@ -93,11 +94,11 @@ function displaySinglePost(post) {
 function handleCommentSubmission(event) {
 	event.preventDefault();
 
-	const authorName = document.getElementById('comment-author').value;
-	const content = document.getElementById('comment-content').value;
+	const authorName = event.target.elements.author.value;
+	const content = event.target.elements.content.value;
 
 	const commentData = {
-		post: postId, // relates the comment to the post
+		post: postId,
 		author_name: authorName,
 		content: content,
 	};
@@ -112,15 +113,11 @@ function handleCommentSubmission(event) {
 		.then((response) => response.json())
 		.then((data) => {
 			if (data.id) {
-				alert('Your comment has been submitted and is awaiting moderation.');
-				// Clear the form fields after successful submission
-				document.getElementById('comment-author').value = '';
-				document.getElementById('comment-content').value = '';
+				alert('Comment submitted for moderation.');
+				event.target.reset(); // Reset the form
 			} else {
-				alert('There was an error submitting your comment.');
+				alert('Error submitting comment.');
 			}
 		})
-		.catch((error) => {
-			console.error('Error submitting comment:', error);
-		});
+		.catch((error) => console.error('Error submitting comment:', error));
 }
