@@ -50,7 +50,6 @@ function fetchPosts(perPage, offset) {
 		.catch((error) => console.error('Error fetching posts:', error));
 }
 
-
 function displayPost(post) {
 	let postsContainer;
 
