@@ -83,6 +83,5 @@ function displayPost(post) {
         <p>Date: ${new Date(post.date).toLocaleDateString()}</p>
         <a href="${postLink}">Read more</a>
     `;
-
 	postsContainer.appendChild(postElement);
 }
