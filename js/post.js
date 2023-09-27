@@ -6,6 +6,8 @@ const authors = {
 	// Add more authors as needed
 };
 
+
+
 // Get post ID from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
@@ -35,6 +37,8 @@ function fetchPostDetails(id) {
 		});
 }
 
+
+
 function fetchMedia(mediaId) {
 	return fetch(
 		`https://www.thatsumsitallup.site/wp-json/wp/v2/media/${mediaId}`
@@ -57,6 +61,8 @@ function fetchAuthor(authorId) {
 			return author.name;
 		});
 }
+
+
 
 function displaySinglePost(post) {
 	postContainer.innerHTML = `
@@ -84,6 +90,7 @@ function displaySinglePost(post) {
             </form>
         </div>
     `;
+
 
 
 	// Add event listener
