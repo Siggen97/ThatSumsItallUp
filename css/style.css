@@ -123,8 +123,13 @@ main {
 	color: antiquewhite;
 	padding: 14px 18px;
 	border-radius: 3px;
-	border: none;
+	border: 2px solid transparent;
 	cursor: pointer;
+	margin-top: 2rem;
+}
+.loadmore button:hover {
+	border: 2px solid antiquewhite;
+	transition: 0.2s ease-in-out;
 }
 
 /* Post Layout */
