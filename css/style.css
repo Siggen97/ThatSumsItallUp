@@ -157,13 +157,14 @@ a:hover, #account-btn:hover {
 
 /* Single Posts */
 #single-post-content {
-	margin: auto;
-	width: 50rem;
-	margin-top: 5rem;
-	color: black;
-	background-color: rgba(255, 255, 255, 0.559);
-	padding: 10px;
-	border-radius: 3px;
+    margin: auto;
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 5rem;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.559);
+    padding: 10px;
+    border-radius: 3px;
 }
 #single-post-content .featured-media {
 	width: 50%;
@@ -369,7 +370,6 @@ img {
         gap: 1rem;
     }
 }
-
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .all-posts {
         grid-template-columns: repeat(2, 1fr);
@@ -379,6 +379,22 @@ img {
 
 
 /* SINGLE-POST */
+@media only screen and (max-width: 768px) {
+    #single-post-content {
+        width: 90%;
+        margin-top: 2rem;
+        padding: 5px;
+    }
+    #single-post-content .featured-media {
+        width: 100%;
+    }
+    .post-content {
+        padding: 1rem;
+        font-size: 0.9rem; 
+    }
+}
+
+
 /* AUTHORS */
 /* ABOUT-CONTACT */
 
