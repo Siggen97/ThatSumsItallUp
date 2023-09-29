@@ -145,6 +145,7 @@ a:hover, #account-btn:hover {
 	object-fit: cover;
 	opacity: 1;
 }
+
 .post-summary img:hover {
 	opacity: 70%;
 	transition: 0.2s all ease-in-out;
@@ -307,10 +308,76 @@ footer {
 	margin-right: 10px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* RESPONSIVE FOR ALL SCREENS */
-/* HEADER */
-/* INDEX */
+/* HEADER/HOME PAGE */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    #account-btn {
+        position: static;
+        margin: 0.5rem 0;
+    }
+
+    .main-home {
+        margin: 0.5rem;
+    }
+
+    .latest-posts {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
 /* ARCHIVE */
+@media only screen and (max-width: 768px) {
+    .all-posts {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 1rem;
+        grid-column-gap: 0;
+    }
+
+    .div1, .div2, .div3, .div4 {
+        grid-area: unset;
+    }
+
+    .main-archive {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .all-posts {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+
 /* SINGLE-POST */
 /* AUTHORS */
 /* ABOUT-CONTACT */
