@@ -61,6 +61,10 @@ a:hover, #account-btn:hover {
 	border-radius: 3px;
 	cursor: pointer;
 }
+main {
+	margin-top: 4rem;
+	margin-bottom: 3rem;
+}
 
 /* Home Page */
 .main-home {
@@ -68,7 +72,6 @@ a:hover, #account-btn:hover {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin: 1%;
 }
 .latest-posts {
 	display: flex;
@@ -217,28 +220,45 @@ a:hover, #account-btn:hover {
 
 /* About/Contact Page */
 .about-contact {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
 }
 .about-contact p {
 	width: 600px;
 }
-.about-content,
-.contact-content {
-	margin-top: 2rem;
+.about-content, .contact-content {
 	color: black;
-	background-color: rgba(255, 255, 255, 0.411);
-	padding: 10px 16px;
-	border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.411);
+    padding: 10px 16px;
+    border-radius: 3px;
+    width: 45%; 
 }
 form div {
-	margin-top: 1rem;
+    margin-top: 1rem;
 }
-#message {
-	width: 250px;
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
 }
+input, textarea {
+    width: 90%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button.submit-request {
+    background-color: #222;
+    color: #ddd;
+    border-radius: 3px;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+}
+
 
 /* Authors Page */
 .authors-main {
@@ -258,13 +278,13 @@ form div {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
-    align-items: flex-start; /* Changed from flex-end to flex-start */
+    align-items: flex-start; 
     padding: 1rem;
-    flex-wrap: wrap; /* Added this line to allow items to wrap */
+    flex-wrap: wrap; 
 }
 .authors-card img {
-    width: 100%; /* Changed from fixed width to 100% */
-    max-width: 20rem; /* Set a max-width to control size on larger screens */
+    width: 100%;
+    max-width: 20rem; 
     border-radius: 3px;
 }
 .authors-card div {
@@ -272,8 +292,8 @@ form div {
 	background-color: rgba(255, 255, 255, 0.411);
 	padding: 10px 16px;
 	border-radius: 3px;
-	flex: 1; /* Allows divs to grow to take available space */
-    margin-bottom: 1em; /* Added some margin for spacing when wrapped */
+	flex: 1; 
+    margin-bottom: 1em; 
 }
 
 
@@ -325,6 +345,7 @@ img {
     height: auto;
 }
 
+
 /* RESPONSIVE FOR ALL SCREENS */
 /* HEADER/HOME PAGE */
 @media only screen and (max-width: 768px) {
@@ -363,6 +384,7 @@ img {
         font-size: 1.2rem;
     }
 }
+
 
 /* ARCHIVE */
 @media only screen and (max-width: 768px) {
@@ -417,7 +439,22 @@ img {
     }
 }
 
+
 /* ABOUT-CONTACT */
+@media only screen and (max-width: 768px) {
+    .about-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content, .contact-content {
+        width: 100%; 
+    }
+
+    input, textarea {
+        font-size: 0.9em;
+    }
+}
 
 
 /* FOOTER */
