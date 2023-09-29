@@ -241,6 +241,13 @@ form div {
 }
 
 /* Authors Page */
+.authors-main {
+    padding: 1em;
+}
+
+.our-authors {
+    text-align: center;
+}
 .our-authors {
 	display: flex;
 	flex-direction: column;
@@ -248,23 +255,27 @@ form div {
 	margin-bottom: 5rem;
 }
 .authors-card {
-	display: flex;
-	gap: 1rem;
-	justify-content: space-between;
-	align-items: flex-end;
-	padding: 1rem;
-	height: 40rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-start; /* Changed from flex-end to flex-start */
+    padding: 1rem;
+    flex-wrap: wrap; /* Added this line to allow items to wrap */
+}
+.authors-card img {
+    width: 100%; /* Changed from fixed width to 100% */
+    max-width: 20rem; /* Set a max-width to control size on larger screens */
+    border-radius: 3px;
 }
 .authors-card div {
 	color: black;
 	background-color: rgba(255, 255, 255, 0.411);
 	padding: 10px 16px;
 	border-radius: 3px;
+	flex: 1; /* Allows divs to grow to take available space */
+    margin-bottom: 1em; /* Added some margin for spacing when wrapped */
 }
-.authors-card img {
-	width: 20rem;
-	border-radius: 3px;
-}
+
 
 /* Footer */
 footer {
@@ -396,6 +407,16 @@ img {
 
 
 /* AUTHORS */
+@media only screen and (max-width: 768px) {
+    .authors-card {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .authors-card div, .authors-card img {
+        width: 100%; /* Allow text divs and image to take full width on small screens */
+    }
+}
+
 /* ABOUT-CONTACT */
 
 
