@@ -307,7 +307,16 @@ footer {
 	margin-right: 10px;
 }
 
-/* Responsive for smaller screens */
+/* RESPONSIVE FOR ALL SCREENS */
+/* HEADER */
+/* INDEX */
+/* ARCHIVE */
+/* SINGLE-POST */
+/* AUTHORS */
+/* ABOUT-CONTACT */
+
+
+/* FOOTER */
 @media screen and (max-width: 768px) {
 	.footer-container {
 		flex-direction: column;
