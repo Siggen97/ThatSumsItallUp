@@ -306,7 +306,6 @@ footer {
 	padding: 20px 0;
 	margin-top: 5rem;
 }
-
 .footer-container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -316,32 +315,22 @@ footer {
 	flex-wrap: wrap;
 	padding: 0 20px;
 }
-
 .branding h2 {
 	margin: 0;
 }
-
 .footer-nav {
 	display: flex;
 	gap: 20px;
 }
-
 .footer-nav a {
 	color: antiquewhite;
 	text-decoration: none;
 	transition: color 0.3s;
 }
-
-.footer-nav a:hover {
-	font-size: 20px;
-	text-decoration: none;
-}
-
 .social-media a img {
 	height: 25px;
 	margin-right: 10px;
 }
-
 img {
     max-width: 100%;
     height: auto;
