@@ -242,6 +242,17 @@ form div {
 	width: 250px;
 }
 
+/* Authors Page */
+.authors-main {
+	margin: 10px;
+}
+.our-authors {
+	display: flex;
+	flex-direction: column;
+}
+.authors-card {
+	display: flex;
+}
 /* Footer */
 footer {
 	background-color: #222;
