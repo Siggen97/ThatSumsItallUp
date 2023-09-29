@@ -36,7 +36,7 @@ function displayPost(post) {
 	postElement.innerHTML = `
         <a href="post.html?id=${post.id}">
             <h3>${post.title.rendered}</h3>
-            <img src="${post.mediaUrl}" alt="${post.title.rendered}">
+            <img class="post-img" src="${post.mediaUrl}" alt="${post.title.rendered}">
         </a>
         <p>${post.excerpt.rendered}</p>
         <p>Author: ${authors[post.author] || 'Unknown'}</p>
