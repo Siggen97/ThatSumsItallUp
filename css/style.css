@@ -83,15 +83,16 @@ main {
 .latest-posts {
 	display: flex;
 	align-items: baseline;
-	gap: 2rem;
+	row-gap: 1rem;
+	column-gap: 1.5rem;
 }
 
 /* Archive Page */
 .main-archive {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
 }
 .all-posts {
 	display: grid;
