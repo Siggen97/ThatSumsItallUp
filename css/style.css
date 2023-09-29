@@ -9,25 +9,20 @@ body {
 	color: antiquewhite;
 	caret-color: transparent;
 }
+
 body::-webkit-scrollbar {
 	display: none;
 }
 body::before {
 	content: '';
-	position: fixed; /* Fixed position */
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1; /* Sit behind the content */
-
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: -1;
 	background-image: url(../images/footballpitch-birdview.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-
-	/* Blur the background image */
 	filter: blur(4px);
-	transform: scale(1.02); /* to cover any gaps at the edges */
+	transform: scale(1.02);
 }
 
 header {
@@ -37,22 +32,23 @@ header {
 	align-items: center;
 	margin: 1%;
 }
-nav button {
-	font-size: 1.2rem;
-	background: transparent;
+
+nav button, .submit-comment, .submit-request {
+	background-color: #222;
+	color: #ddd;
 	border: none;
-	padding: 1rem;
+	cursor: pointer;
 }
-a {
+a, #account-btn {
 	text-decoration: none;
 	color: antiquewhite;
-	border: 2px solid transparent;
 	padding: 10px;
-}
-nav a:hover {
-	border: 2px solid antiquewhite;
+	border: 2px solid transparent;
 	border-radius: 3px;
-	padding: 12px;
+}
+
+a:hover, #account-btn:hover {
+	border: 2px solid antiquewhite;
 	transition: 0.3s all ease-in-out;
 }
 #account-btn {
