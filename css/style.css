@@ -243,26 +243,29 @@ form div {
 }
 
 /* Authors Page */
-.authors-main {
-	margin: 10px;
-}
 .our-authors {
 	display: flex;
 	flex-direction: column;
+	padding: 1rem;
+	margin-bottom: 5rem;
 }
 .authors-card {
 	display: flex;
 	gap: 1rem;
-	justify-content: baseline;
+	justify-content: space-between;
+	align-items: flex-end;
 	padding: 1rem;
 	height: 40rem;
-	width: 70rem;
 }
 .authors-card div {
-	height: fit-content;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.411);
+	padding: 10px 16px;
+	border-radius: 3px;
 }
 .authors-card img {
-	height: 100%;
+	width: 20rem;
+	border-radius: 3px;
 }
 
 /* Footer */
