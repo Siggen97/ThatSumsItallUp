@@ -7,7 +7,7 @@
     <meta name="description"
         content="The home of a football blog. Here you will find interesting posts about the beautiful game. Get involved in different ways, either to discuss topics, leave comments or become a guest writer.">
     <link rel="stylesheet" href="css/style.css">
-    <script></script>
+    <script defer src="js/contact.js"></script>
     <title>ThatSumsItAllUp-About/Contact</title>
     <script>
         (function (h, o, t, j, a, r) {
@@ -51,18 +51,21 @@
                 <p>If you have any queries, suggestions or feedback, please feel free to get in touch via the form below:
                 </p>
                 <form action="YOUR_SERVER_ENDPOINT" method="POST">
-                    <div>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message"></label>
-                        <textarea id="message" name="message" rows="6" required>Message...</textarea>
-                    </div>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="nameError" style="color:red;"></span>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" style="color:red;"></span>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required>Message...</textarea>
+                    <span id="messageError" style="color:red;"></span>
+                </div>
                     <div>
                         <button class="submit-request" type="submit">Submit</button>
                     </div>
